@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Chatter</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}">
+</head>
+<body>
+    <div class="title-box">
+        <h2>Chatter - simple pet project made by Lev4ik$</h2>
+    </div>
+    <div class="main-box">
+        <h2>Enter a room with your username</h2>
+        <form>
+            <div class="input-field">
+                <input type="text" id="room-name-input" required="">
+                <label>Room name</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="username-input" required="">
+                <label>Username</label>
+            </div>
+            <a href="#" id="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+            </a>
+        </form>
+    </div>
+    <script>
+        document.querySelector('#submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            var userName = document.querySelector('#username-input').value;
+
+            window.location.replace(roomName + '/?username=' + userName);
+        }
+    </script>
+</body>
+
+</html>
